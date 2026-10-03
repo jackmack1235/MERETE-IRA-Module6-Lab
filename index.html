@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Seminar Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>IT Seminar Registration</h1>
+    <p class="intro">Fill in every field. Your details are checked in this browser only.</p>
+
+    <form id="registrationForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" autocomplete="name" required aria-describedby="fullNameError">
+        <p class="error" id="fullNameError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number</label>
+        <input type="text" id="studentNumber" name="studentNumber" placeholder="24-1234-123" required aria-describedby="studentNumberError">
+        <p class="error" id="studentNumberError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="emailError">
+        <p class="error" id="emailError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="09171234567" autocomplete="tel" required aria-describedby="mobileNumberError">
+        <p class="error" id="mobileNumberError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" required aria-describedby="passwordFeedback passwordError">
+        <p class="feedback" id="passwordFeedback" aria-live="polite"></p>
+        <p class="error" id="passwordError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required aria-describedby="confirmPasswordError">
+        <p class="error" id="confirmPasswordError" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course" name="course" required aria-describedby="courseError">
+          <option value="" selected>Select your course</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <p class="error" id="courseError" aria-live="polite"></p>
+      </div>
+
+      <div class="field check">
+        <input type="checkbox" id="terms" name="terms" required aria-describedby="termsError">
+        <label for="terms">I agree to the seminar terms and conditions</label>
+        <p class="error" id="termsError" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <p id="successMessage" class="success" role="status"></p>
+
+    <section id="registrationSummary" class="summary" hidden aria-label="Registration summary">
+      <h2>Registration summary</h2>
+      <dl>
+        <dt>Full name</dt><dd id="summaryName"></dd>
+        <dt>Student number</dt><dd id="summaryStudentNumber"></dd>
+        <dt>Email address</dt><dd id="summaryEmail"></dd>
+        <dt>Mobile number</dt><dd id="summaryMobileNumber"></dd>
+        <dt>Course</dt><dd id="summaryCourse"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
